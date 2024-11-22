@@ -3,10 +3,10 @@ import Button from './Components/Button';
 import './App.css';
 
 function App() {
-  const [activeBtn, setActiveBtn] = useState("")
+  const [activeButton, setActiveButton] = useState("")
 
   const handleClick = (button) => {
-    setActiveBtn(button)
+    setActiveButton(button)
   };
                              
   return (
@@ -16,15 +16,13 @@ function App() {
         label="Add Task" 
         onClick={() => handleClick("add")}
         backgroundColor="#1a5e66"
-        isActive= {activeBtn === "add"}
-        isDisabled={false}
+        isActive= {activeButton === "add"}
       />
       <Button 
         label="View Task" 
         onClick={() => handleClick("view")}
         backgroundColor="#1a5e66"
-        isActive={activeBtn === "view"}
-        isDisabled={false}
+        isActive={activeButton === "view"}
       />
     </div>
   );
