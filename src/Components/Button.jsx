@@ -11,4 +11,5 @@ const Button = ({label, backgroundColor, onClick, isDisabled = false, isActive =
         </button>
     )
 }
+
 export default Button
