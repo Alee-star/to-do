@@ -50,7 +50,8 @@ button {
   font-size: 1rem;
   border: 1px solid #ccc;
   margin-top: 20px;
-}  
+}
+
 .todo-input {
     display: flex;
     flex-direction: column;

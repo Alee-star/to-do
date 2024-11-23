@@ -14,7 +14,7 @@ function ViewTask({ viewTodo, removeTask }) {
                             {todo.task} <br />
                             <Button onClick={() => removeTask(index)} label={'x'} className="button-close" ></Button>
                         </li>
-                    ))
+                    )) 
                 )}
             </ul>                                                                        
         </div>
