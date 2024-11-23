@@ -4,24 +4,20 @@ import AddTask from './Components/AddTask';
 import './App.css';
 
 function App() {
-  const [activeButton, setActiveButton] = useState("");
-  const [showAddTask, setShowAddTask] = useState(false); // initially addtask is hidden as showaddtask is false
+  const [activeButton, setActiveButton] = useState(false);
   const [tasks, setTasks] = useState([]);
 
   const handleClick = (button) => {
     setActiveButton(button);
-    if (button === "add") {
-      setShowAddTask(true); // showaddtask will be opposite of previous value
-    }
-    if (button === "view") {
-      setShowAddTask(false);
-    }
   };
 
   const addTask = (task) => {
     console.log(task);
     setTasks((prevTasks) => [...prevTasks, task]);
   };
+
+  const isAddButtonActive = activeButton === "add";
+  const isViewButtonActive = activeButton === "view";
 
   return (
     <div className="todo-container">
@@ -30,17 +26,17 @@ function App() {
         label="Add Task"
         onClick={() => handleClick("add")}
         backgroundColor="#1a5e66"
-        isActive={activeButton === "add"}
+        isActive={ isAddButtonActive }
         isDisabled={false}
       />
       <Button
         label="View Task"
         onClick={() => handleClick("view")}
         backgroundColor="#1a5e66"
-        isActive={activeButton === "view"}
+        isActive={ isViewButtonActive }
         isDisabled={false}
       />
-      {activeButton === "add" && <AddTask addTask={addTask} />}
+      { isAddButtonActive && <AddTask addTask={addTask} />}
     </div>
   );
 }
