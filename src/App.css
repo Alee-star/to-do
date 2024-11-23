@@ -85,7 +85,7 @@ button {
     max-width: 150px;
 }
 
-.btn-create {
+.button-create {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     font-weight: bold;
@@ -98,11 +98,11 @@ button {
     width: 100%;
 }
 
-.btn-create:disabled {
+.button-create:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
 
-.btn-create:hover:not(:disabled) {
+.button-create:hover:not(:disabled) {
     background-color: #174d57;
 }
