@@ -8,7 +8,6 @@ const Button = ({
   isActive = false,
   className,
 }) => {
-  // Check if the button is disabled first
   const buttonStyle = isDisabled
     ? { backgroundColor: "#ccc", cursor: "not-allowed" } // Disabled style
     : { backgroundColor: isActive ? "rgb(10, 177, 173)" : backgroundColor }; // Active style or default background
@@ -18,7 +17,7 @@ const Button = ({
       className={className}
       onClick={onClick}
       style={buttonStyle}
-      disabled={isDisabled} // Disable the button when isDisabled is true
+      disabled={isDisabled} 
     >
       {label}
     </button>
