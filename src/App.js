@@ -12,7 +12,6 @@ function App() {
   };
 
   const addTask = (task) => {
-    console.log(task);
     setTasks((prevTasks) => [...prevTasks, task]);
   };
 
