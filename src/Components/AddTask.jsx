@@ -3,15 +3,15 @@ import React , { useState } from "react";
 import Button from "./Button";
 
 function AddTask({ addTask }) {
-    const [taskInput, setTaskInput] = useState("");
+    const [taskName, setTaskName] = useState("");
     const [status, setStatus] = useState("Todo");
 
     const taskStatuses = ["Todo", "In-Progress", "Completed"];
 
     const createClick = () => {
-        if(taskInput.trim()) {
-            addTask({task: taskInput, status});
-            setTaskInput(""); // clear after
+        if(taskName.trim()) {
+            addTask({task: taskName, status});
+            setTaskName(""); // clear after
             setStatus("Todo");
         }
     };
@@ -21,7 +21,7 @@ function AddTask({ addTask }) {
             <input 
                 type="text" 
                 placeholder="Enter todo" 
-                value={taskInput} onChange={(e) => setTaskInput(e.target.value)} maxLength={25}>
+                value={taskName} onChange={(e) => setTaskName(e.target.value.trim())} maxLength={25}>
             </input> 
             <div className="status">
                 <label htmlFor="taskStatus">Task Status: </label>
@@ -39,7 +39,7 @@ function AddTask({ addTask }) {
                 label="Create Todo"
                 onClick={createClick}
                 backgroundColor="#1a5e66"
-                isDisabled={!taskInput.trim()}
+                isDisabled={!taskName}
             />
         </div>
     ) ;
