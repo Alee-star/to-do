@@ -19,21 +19,24 @@ function App() {
   const isViewButtonActive = activeButton === "view";
 
   return (
-    <div className="todo-container">
-      <h1>TODO APP</h1>
-      <Button
-        label="Add Task"
-        onClick={() => handleClick("add")}
-        backgroundColor="#1a5e66"
-        isActive={ isAddButtonActive }
-      />
-      <Button
-        label="View Task"
-        onClick={() => handleClick("view")}
-        backgroundColor="#1a5e66"
-        isActive={ isViewButtonActive }
-      />
-      { isAddButtonActive && <AddTask addTask={addTask} />}
+    <div className='App'>
+      <div className="todo-container">
+        <h1>TODO APP</h1>
+        <Button
+          label="Add Task"
+          onClick={() => handleClick("add")}
+          backgroundColor="#1a5e66"
+          isActive={isAddButtonActive}
+        />
+        <Button
+          label="View Task"
+          onClick={() => handleClick("view")}
+          backgroundColor="#1a5e66"
+          isActive={isViewButtonActive}
+        />
+        {isAddButtonActive && <AddTask addTask={addTask} />}
+        {isViewButtonActive && <ViewTask viewTodo={tasks} removeTask={removeTask}/>}
+      </div>
     </div>
   );
 }
