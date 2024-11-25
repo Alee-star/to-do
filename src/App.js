@@ -26,14 +26,12 @@ function App() {
         onClick={() => handleClick("add")}
         backgroundColor="#1a5e66"
         isActive={ isAddButtonActive }
-        isDisabled={false}
       />
       <Button
         label="View Task"
         onClick={() => handleClick("view")}
         backgroundColor="#1a5e66"
         isActive={ isViewButtonActive }
-        isDisabled={false}
       />
       { isAddButtonActive && <AddTask addTask={addTask} />}
     </div>
