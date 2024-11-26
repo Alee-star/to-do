@@ -6,7 +6,7 @@ function AddTask({ addTask }) {
     const [status, setStatus] = useState("Todo");
 
     const taskStatuses = ["Todo", "In-Progress", "Completed"];
-
+    
     const createClick = () => {
         if(taskName) {
             addTask({task: taskName, status});
