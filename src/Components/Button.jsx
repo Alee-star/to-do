@@ -17,7 +17,7 @@ const Button = ({
       className={className}
       onClick={onClick}
       style={buttonStyle}
-      disabled={isDisabled} 
+      disabled={isDisabled}
     >
       {label}
     </button>

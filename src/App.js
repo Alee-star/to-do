@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import Button from './Components/Button';
-import AddTask from './Components/AddTask';
-import ViewTask from './Components/ViewTask';
-import './App.css';
+import React, { useState } from "react";
+import Button from "./Components/Button";
+import AddTask from "./Components/AddTask";
+import ViewTask from "./Components/ViewTask";
+import "./App.css";
 
 function App() {
   const [activeButton, setActiveButton] = useState(false);
@@ -24,7 +24,7 @@ function App() {
   const isViewButtonActive = activeButton === "view";
 
   return (
-    <div className='App'>
+    <div className="App">
       <div className="todo-container">
         <h1>TODO APP</h1>
         <Button
@@ -40,10 +40,12 @@ function App() {
           isActive={isViewButtonActive}
         />
         {isAddButtonActive && <AddTask addTask={addTask} />}
-        {isViewButtonActive && <ViewTask viewTodo={tasks} removeTask={removeTask}/>}
+        {isViewButtonActive && (
+          <ViewTask viewTodo={tasks} removeTask={removeTask} />
+        )}
       </div>
     </div>
   );
 }
 
-export default App
+export default App;
