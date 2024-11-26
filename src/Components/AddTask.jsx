@@ -8,25 +8,34 @@ function AddTask({ addTask }) {
     const taskStatuses = ["Todo", "In-Progress", "Completed"];
     
     const createClick = () => {
-        if(taskName.trim()) {
-            addTask({task: taskInput, status});
+        if(taskName) {
+            addTask({task: taskName, status});
             setTaskName(""); // clear after
             setStatus("Todo");
         }
     }
+
+    const onTodoInputChange = (event) => {
+        setTaskName(event.target.value.trim())
+    }
+
+    const onTodoStatusChange = (event) => {
+        setStatus(event.target.value)
+    }
+
     return (
         <div className="todo-input">
             <input 
                 type="text" 
                 placeholder="Enter todo" 
-                value={taskName} onChange={(e) => setTaskName(e.target.value.trim())} maxLength={25}>
+                value={taskName} onChange={onTodoInputChange} maxLength={25}>
             </input>
             <div className="status">
                 <label htmlFor="taskStatus">Task Status: </label>
                 <select 
                     id="taskStatus" 
                     value={status} 
-                    onChange={(e) => setStatus(e.target.value)}
+                    onChange={onTodoStatusChange}
                 >
                     {taskStatuses.map((taskStatus, index) => (
                         <option key={index} value={taskStatus}>{taskStatus}</option>

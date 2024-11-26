@@ -35,7 +35,6 @@ function App() {
           isActive={isViewButtonActive}
         />
         {isAddButtonActive && <AddTask addTask={addTask} />}
-        {isViewButtonActive && <ViewTask viewTodo={tasks} removeTask={removeTask}/>}
       </div>
     </div>
   );
